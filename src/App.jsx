@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
     button {
         border-style: none;
+        cursor: pointer;
     }
 
     img {
