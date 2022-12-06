@@ -1,12 +1,12 @@
 import React from "react";
-import Card from "../../components/Card/Card";
+import Card from "../../components/ProductItem/ProductItem";
 import Cart from "../../components/Cart/Cart";
 import { useState, useContext } from "react";
 import { ProductInfoContext } from "../../context/ProductInfoContext";
 import styled from "styled-components";
 
 export default function HomePage() {
-    const [loadData, setLoadData] = useState(null);
+    const [loadData, setLoadData] = useState([]);
 
     useContext(ProductInfoContext).then(data => {
         console.log("세팅");
@@ -15,21 +15,19 @@ export default function HomePage() {
 
     return (
         <Main>
-            {loadData !== null ? (
+            {loadData && (
                 <>
-                    <UlProduct>
+                    <ProductList>
                         {loadData.map(item => (
                             <li key={item.id}>
                                 <Card {...item} />
                             </li>
                         ))}
-                    </UlProduct>
+                    </ProductList>
                     <Aside>
                         <Cart></Cart>
                     </Aside>
                 </>
-            ) : (
-                <></>
             )}
         </Main>
     );
@@ -42,7 +40,7 @@ const Main = styled.main`
     padding: 100px 0;
 `;
 
-const UlProduct = styled.ul`
+const ProductList = styled.ul`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
