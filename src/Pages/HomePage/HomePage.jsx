@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../components/ProductItem/ProductItem";
-import Cart from "../../components/Cart/Cart";
+import CartLink from "../../components/CartLink/CartLink";
 import { useState, useContext } from "react";
 import { ProductInfoContext } from "../../context/ProductInfoContext";
 import styled from "styled-components";
@@ -25,7 +25,7 @@ export default function HomePage() {
                         ))}
                     </ProductList>
                     <Aside>
-                        <Cart></Cart>
+                        <CartLink></CartLink>
                     </Aside>
                 </>
             )}

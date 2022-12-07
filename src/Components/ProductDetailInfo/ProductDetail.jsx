@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Detail() {
+export default function ProductDetailInfo() {
     return (
         <section>
             <p>상품 정보</p>
